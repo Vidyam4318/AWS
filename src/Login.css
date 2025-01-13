@@ -1,0 +1,140 @@
+/* Popup Styles */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Container that holds both sections */
+.login-container {
+    display: flex;
+    height: 100vh; /* Full screen height */
+}
+
+/* Left Section - Image and Text */
+.left-section {
+    position: relative; /* Enables absolute positioning for child elements */
+    flex: 2; /* Takes up half of the screen */
+    background-image: url('./assets/loginpage.jpg'); /* Correct relative path to your image */
+    background-size: cover;
+    background-position: center;
+    color: white; /* White text color for contrast */
+    display: flex;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: flex-start; /* Align content to the top */
+    padding: 40px; /* Add padding from the edges */
+}
+
+/* Text overlay placed over the image */
+.text-overlay {
+    position: absolute;
+    top: -0.1; /* Positioning the text a little from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 80%; /* Limit text box width */
+}
+
+    .text-overlay h1 {
+        font-size: 2.5rem; /* Adjust the size of the heading */
+        margin-bottom: 20px;
+    }
+
+    .text-overlay p {
+        font-size: 1.2rem; /* Adjust the size of the paragraph */
+        line-height: 1.5;
+    }
+
+/* Right Section - Login Form */
+.right-section {
+    flex: 1; /* Takes up the other half of the screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+/* Style the login form */
+.login-form {
+    background-color: rgba(255, 255, 256, 0.85); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+    .login-form input,
+    .login-form button {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+
+    .login-form button {
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .login-form button:hover {
+            background-color: #0056b3;
+        }
+
+/* Popup overlay and content - combined with login styles */
+.popup-overlay {
+    display: none; /* Initially hidden, will be shown when necessary */
+}
+
+    .popup-overlay.show {
+        display: flex; /* Display the popup when show class is added */
+    }
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Ensure the form elements are properly aligned */
+.login-form input, .login-form button {
+    font-size: 16px;
+}
+
+/* Optional: Adding transition for popup fade-in effect */
+.popup-overlay.show {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,81 @@
+/* Header styling */
+.header {
+  background-color: #1f1f1f; /* Darker shade for the header */
+  padding: 15px 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header top section */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #f0f0f0; /* Light gray for logo */
+}
+
+/* Auth links */
+.auth-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.auth-links li {
+  margin-left: 25px;
+}
+
+/* Sign-In link and icon styling */
+.auth-links a {
+  color: #b3b3b3; /* Light gray color for sign-in link */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.auth-links a:hover {
+  color: #4caf50; /* Green color on hover for modern look */
+}
+
+.auth-links .signup-button {
+  background-color: #4caf50; /* Green for call-to-action */
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-links .signup-button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Navbar styles */
+.navbar {
+  margin-top: 25px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-links li a {
+  color: #e0e0e0; /* Soft light gray for links */
+  text-decoration: none;
+  padding: 10px 18px;
+  font-weight: 500; /* Slightly bolder text */
+}
+
+.nav-links li a:hover {
+  background-color: #4caf50; /* Green background on hover */
+  border-radius: 5px;
+  color: white; /* White text on hover */
+}

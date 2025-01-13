@@ -1,0 +1,131 @@
+/* General Layout */
+.terms-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.terms-header h1 {
+    font-size: 36px;
+    color: #003366;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.terms-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #003366;
+    margin-top: 30px;
+}
+
+.terms-content p {
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #0c3c66;
+    color: white;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.footer-section {
+    display: inline-block;
+    width: 23%;
+    vertical-align: top;
+    padding: 10px;
+}
+
+    .footer-section h4 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .footer-section ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+            .footer-section ul li a {
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+            }
+
+                .footer-section ul li a:hover {
+                    text-decoration: underline;
+                }
+
+/* Social Media Icons */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+    .social-media a {
+        color: white;
+        font-size: 24px;
+        text-decoration: none;
+    }
+
+        .social-media a:hover {
+            color: #00aaff;
+        }
+
+/* Responsive Layout for Footer */
+@media (max-width: 768px) {
+    .footer-section {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+
+        .footer-section h4 {
+            font-size: 18px;
+        }
+
+        .footer-section ul li a {
+            font-size: 14px;
+        }
+}
+
+@media (max-width: 480px) {
+    .footer-section {
+        width: 100%;
+    }
+
+        .footer-section h4 {
+            font-size: 16px;
+        }
+
+        .footer-section ul li a {
+            font-size: 12px;
+        }
+
+    .social-media {
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .social-media a {
+            margin-bottom: 10px;
+        }
+}

@@ -1,0 +1,47 @@
+/* Profile container styling */
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f6f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+.profile-heading {
+    font-size: 2em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Welcome message styling */
+.welcome-message {
+    font-size: 1.2em;
+    color: #4CAF50;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Login message when not logged in */
+.login-message {
+    font-size: 1.1em;
+    color: #FF5722;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Profile info container styling */
+.profile-info {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+/* Strong text styling */
+strong {
+    color: #333;
+}

@@ -1,0 +1,61 @@
+import pandas as pd
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.application import MIMEApplication
+
+# Function to send an email
+def send_email(to_email, subject, body, sender_email, sender_password, smtp_server, smtp_port):
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = to_email
+    msg['Subject'] = subject
+
+    # Attach the body text to the email
+    msg.attach(MIMEText(body, 'plain'))
+
+    try:
+        # Establish connection to the email server
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.starttls()  # Secure the connection
+        server.login(sender_email, sender_password)
+        
+        # Send the email
+        server.sendmail(sender_email, to_email, msg.as_string())
+        print(f"Email successfully sent to {to_email}")
+        
+    except Exception as e:
+        print(f"Error sending email to {to_email}: {e}")
+    finally:
+        server.quit()
+
+# Load email addresses from an Excel file
+def get_email_addresses(file_path):
+    df = pd.read_excel(file_path)  # Read the Excel file into a DataFrame
+    return df['Email'].tolist()  # Assuming the Excel file has a column named 'Email'
+
+def main():
+    # Sender's email details
+    sender_email = 'youremail@example.com'  # Replace with your email address
+    sender_password = 'yourpassword'  # Replace with your email password
+
+    # SMTP server details for Gmail (You can change this based on your email provider)
+    smtp_server = 'smtp.gmail.com'
+    smtp_port = 587
+    
+    # Email content
+    subject = 'Your Subject Here'
+    body = 'This is the body of the email'
+
+    # Path to your Excel file containing email addresses
+    excel_file_path = 'email_addresses.xlsx'
+
+    # Get email addresses from the Excel file
+    email_addresses = get_email_addresses(excel_file_path)
+
+    # Send emails to all addresses
+    for email in email_addresses:
+        send_email(email, subject, body, sender_email, sender_password, smtp_server, smtp_port)
+
+if __name__ == "__main__":
+    main()

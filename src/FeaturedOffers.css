@@ -1,0 +1,23 @@
+.featured-offers {
+    text-align: center;
+    padding: 2rem;
+  }
+  .offer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .offer-button {
+    padding: 0.8rem 1.5rem;
+    background-color: #232f3e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  .offer-button:hover {
+    background-color: #ff9900;
+  }
+  

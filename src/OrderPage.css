@@ -1,0 +1,90 @@
+.orderpage-container {
+    display: flex;
+    gap: 20px;
+    margin: 20px;
+}
+
+.left-panel {
+    flex: 1;
+    max-width: 300px;
+}
+
+.pricing-section, .selected-plan-details {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.pricing-card {
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+    .pricing-card:hover {
+        transform: scale(1.05);
+        background-color: #e6f7ff;
+    }
+
+.selected-plan-details {
+    background-color: #eef9ff;
+}
+
+.change-plan {
+    margin-top: 10px;
+}
+
+.order-details {
+    flex: 2;
+}
+
+.card {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.summary {
+    font-weight: bold;
+    color: #333;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+    }
+
+/* Libraries Section */
+.libraries {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add gap between the items */
+}
+
+    .libraries label {
+        display: flex;
+        align-items: center;
+        gap: 8px; /* Optional: add gap between the checkbox and label */
+    }

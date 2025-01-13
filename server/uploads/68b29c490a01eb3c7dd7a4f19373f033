@@ -1,0 +1,75 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="/struts-tags" prefix="cdac"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Adminview - Approved entries</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="css/confreg.css">
+<link rel="stylesheet" href="css/confreg-res.css">
+<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<h4 style="text-align: center; font-size: larger; color: #336699">"Big Data Analytics" Workshop Registration Confirmation</h4>
+		<div class="span12">
+		<hr>
+		<div class="hero-unit-admin">
+			<a href="rejectedUserList.do" class="btn btn-danger btn-mini pull-right">&nbsp;&nbsp;Rejected Users&nbsp;&nbsp;</a>
+			<a href="userDetails.do" class="btn btn-warning btn-mini pull-right">&nbsp;&nbsp;Pending Users&nbsp;&nbsp;</a>
+			<!-- form action="userRegistrationConfirmation.do" method="post" -->
+			<table id="accept" class="table table-striped table-hover table-condensed">
+				<thead>
+					<tr><th>#</th><th>Name</th><th>Organization</th><th>Organization-Type</th><th>Designation</th><th>Email ID</th>
+					<th>Phone-No</th><th>Mode-Of-Payment</th><th>Transaction-Details</th><th>Approve/Reject</th></tr>
+				</thead>
+				<tbody>
+					<%-- tr class="success"><td><label class="checkbox"><input type="checkbox" name="userEmail" value='samit@cdac.in'></label></td>
+					<td>Amit Singh</td><td>C-DAC, Pune</td><td>Gov</td><td>Project Engineer</td><td>samit@cdac.in</td>
+					<td>9876678965</td><td>DD</td><td>124421</td><td>Approved</td></tr--%>
+					
+					<cdac:iterator value="userList" status="i">
+						<tr class="success">
+						<td><cdac:property value="%{#i.count}"/></td>
+						<!--td><label class="checkbox"><input type="checkbox" name="userEmail" value='<cdac:property value="emailID"/>'></label></td -->
+						<td><cdac:property value="firstName"/></td>
+						<td><cdac:property value="organization"/></td><td><cdac:property value="orgType"/></td>
+						<td><cdac:property value="designation"/></td><td><cdac:property value="emailID"/></td>
+						<td><cdac:property value="phoneno"/></td><td><cdac:property value="payment"/></td>
+						<td><cdac:property value="transdetails"/></td><td><cdac:property value="status"/></td>
+						</tr>
+					</cdac:iterator>
+				</tbody>
+			</table>
+			<button type="button" id="buttonExport" class="btn btn-info btn-mini pull-right" onclick="tableToExcel('accept', 'Confirmed List')">Save As Excel</button>
+			<!--div class="form-actions-admin-top text-align-center">
+    			<button type="submit" id="approvebutton" name="approve" class="btn btn-success btn-mini">Approve</button>
+    			<button type="submit" id="rejectbutton" name="reject" class="btn btn-danger btn-mini">&nbsp;&nbsp;Reject&nbsp;&nbsp;</button>
+    		</div -->
+		</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+});
+var tableToExcel = (function() {
+    var uri = 'data:application/vnd.ms-excel;base64,'
+      , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'
+      , base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
+      , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+    return function(table, name) {
+      if (!table.nodeType) table = document.getElementById(table)
+      var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+      window.location.href = uri + base64(format(template, ctx))
+    }
+  })()
+</script>
+</body>
+</html>

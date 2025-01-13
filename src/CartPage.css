@@ -1,0 +1,16 @@
+/* CartPage.css */
+.cart-item {
+    display: flex;
+    justify-content: space-between; /* Align items on opposite sides */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px; /* Space between items */
+}
+
+.button-group {
+    display: flex; /* Use flexbox for inline buttons */
+    gap: 10px; /* Space between buttons */
+}
+
+.payment-button {
+    /* Add any specific styles for the Payment button here */
+}
